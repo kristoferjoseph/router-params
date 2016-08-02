@@ -31,8 +31,7 @@ function decodeValue(value) {
     return decodeURIComponent(value)
   } catch (err) {
     if (err instanceof URIError) {
-      err.message = 'Failed to decode param \'' + val + '\''
-
+      err.message = 'Failed to decode param \'' + value + '\''
     }
 
     throw err
