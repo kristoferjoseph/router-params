@@ -1,0 +1,34 @@
+{
+  "name": "router-params",
+  "version": "1.0.0",
+  "description": "tiny url parameter parsing utility for use with routers. Works just like express router.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js",
+    "umd": "browserify ./index.js --standalone router-params | uglifyjs --compress --mangle --screw-ie8 > router-params.umd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristoferjoseph/router-params.git"
+  },
+  "keywords": [
+    "url",
+    "params",
+    "paramaters",
+    "router"
+  ],
+  "author": "@dam",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kristoferjoseph/router-params/issues"
+  },
+  "homepage": "https://github.com/kristoferjoseph/router-params#readme",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "tape": "^4.6.0",
+    "uglify-js": "^2.7.0"
+  },
+  "dependencies": {
+    "path-to-regexp": "^1.5.3"
+  }
+}
