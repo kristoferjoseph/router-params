@@ -3,19 +3,20 @@ var pathToRegexp = require('path-to-regexp')
 module.exports = function createPattern(path) {
   var keys = []
   var reg = pathToRegexp(path, keys)
+  if (!keys.length) { return false }
   return function match(path) {
-    var result = {}
-    var m = reg.exec(path)
-    var path = m[0]
-    for (var i = 1; i < m.length; i++) {
-      var key = keys[i - 1]
-      var property = key.name
-      var value = decodeValue(m[i])
-      if (value !== undefined ||
-        !(hasOwnProperty(result, property))) {
-        result[property] = value
+    var result  = {}
+    var matches = reg.exec(path)
+    result.path = matches.shift()
+
+    matches.forEach(function(m, index) {
+      var key = keys[index]
+      var prop = key.name
+      var value = decodeValue(m)
+      if (value) {
+        result[prop] = value
       }
-    }
+    })
 
     return result
   }
