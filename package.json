@@ -1,6 +1,6 @@
 {
   "name": "router-params",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "tiny url parameter parsing utility for use with routers. Works just like express router.",
   "main": "index.js",
   "scripts": {
