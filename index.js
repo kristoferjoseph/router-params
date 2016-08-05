@@ -7,6 +7,7 @@ module.exports = function createPattern(path) {
   return function match(path) {
     var result  = {}
     var matches = reg.exec(path)
+    if (!matches) { return }
     result.path = matches.shift()
 
     matches.forEach(function(m, index) {
